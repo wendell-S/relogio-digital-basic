@@ -1,19 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
 
-icon 
 * {
    margin: 0;
    padding: 0;
    font-family: 'open sans', sans-serif ; 
-  }
+}
 
-  body{
+body {
    height: 100vh;
-   background: linear-gradient(120deg, #2def02d8, #0eefffda) ;
+   background: linear-gradient(120deg, #ff4400, #ff9500); /* Tons de damasco escuro e laranja vibrante */
    display: flex;
    align-items: center;
    justify-content: center;
-  }
+}
 
 .relogio {
    display: flex;
@@ -23,7 +22,7 @@ icon
    width: 550px;
    background: transparent;
    border-radius: 3px;
-   box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.5);
+   box-shadow: 0px 8px 10px rgba(0, 0, 0, 1.0);
 }
 
 .relogio div {
@@ -34,10 +33,14 @@ icon
    align-items: center;
    justify-content: center;
    color: #fff;
-   background: rgba(5, 5, 5, 0.9);
+   background: rgba(0, 0, 0, 0.7); /* Cor escura levemente transparente */
    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.7);
    border-radius: 7px;
-    letter-spacing: 3px;
+   letter-spacing: 3px;
+}
+
+.relogio div:nth-child(2) {
+   background: rgba(0, 0, 0, 0.7); /* Cor escura levemente transparente */
 }
 
 .relogio span {
