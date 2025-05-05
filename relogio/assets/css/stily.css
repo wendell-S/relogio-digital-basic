@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'open sans', sans-serif ;
+    box-sizing: border-box;
+    transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(120deg, #ff4400, #ff9500); /* Tema padrão (escuro) */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff; /* Cor padrão do texto para o tema escuro */
+}
+
+body.light-theme {
+    background: linear-gradient(120deg, #f0f0f0, #e0e0e0); /* Tema claro */
+    color: #333; /* Cor do texto para o tema claro */
+}
+
+.relogio {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 200px;
+    width: 550px;
+    background: transparent;
+    border-radius: 3px;
+    box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.7);
+}
+
+.relogio.light-theme {
+    box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.2);
+}
+
+.relogio div {
+    height: 170px;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.7); /* Tema padrão (escuro) */
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.7);
+    border-radius: 7px;
+    letter-spacing: 3px;
+}
+
+.relogio.light-theme div {
+    background: rgba(255, 255, 255, 0.8); /* Tema claro */
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+    color: #333;
+}
+
+.relogio div:nth-child(2) {
+    background: rgba(0, 0, 0, 0.7); /* Garante a mesma cor no tema escuro */
+}
+
+.relogio.light-theme div:nth-child(2) {
+    background: rgba(255, 255, 255, 0.8); /* Garante a mesma cor no tema claro */
+}
+
+.relogio span {
+    font-weight: bolder;
+    font-size: 60px;
+}
+
+.relogio span.tempo {
+    font-size: 10px;
+}
+
+#themeSwitcher {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#themeSwitcher:hover {
+    background-color: #555;
+}
