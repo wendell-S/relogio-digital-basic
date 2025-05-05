@@ -55,3 +55,35 @@ body {
 .cabecalho .logo {
    width: 65px;
 }
+/* ... outros estilos ... */
+
+.relogio div {
+   /* ... outros estilos ... */
+   transform: scale(1);
+   transition: transform 0.2s ease-in-out, background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.relogio div:hover {
+   transform: scale(1.05);
+}
+
+.relogio span {
+   font-weight: bolder;
+   font-size: 60px;
+   opacity: 0.9;
+   transition: opacity 0.2s ease-in-out;
+}
+
+.relogio span:hover {
+   opacity: 1;
+}
+/* ... outros estilos ... */
+
+#segundos {
+   /* ... outros estilos ... */
+   transition: color 0.1s ease-in-out;
+}
+
+.tick {
+   color: #ff9500 !important; /* Cor de destaque para o "tick" */
+}
