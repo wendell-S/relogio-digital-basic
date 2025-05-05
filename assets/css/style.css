@@ -1,89 +1,97 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+
 * {
-   margin: 0;
-   padding: 0;
-   font-family: 'open sans', sans-serif ; 
+    margin: 0;
+    padding: 0;
+    font-family: 'open sans', sans-serif ;
+    transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Transição suave para mudanças de tema */
 }
 
 body {
-   height: 100vh;
-   background: linear-gradient(120deg, #ff4400, #ff9500); /* Tons de damasco escuro e laranja vibrante */
-   display: flex;
-   align-items: center;
-   justify-content: center;
+    height: 100vh;
+    background: linear-gradient(120deg, #ff4400, #ff9500); /* Tema padrão (escuro) */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body.light-theme {
+    background: linear-gradient(120deg, #f0f0f0, #e0e0e0); /* Tema claro */
+    color: #333;
 }
 
 .relogio {
-   display: flex;
-   align-items: center;
-   justify-content: space-around;
-   height: 200px;
-   width: 550px;
-   background: transparent;
-   border-radius: 3px;
-   box-shadow: 0px 8px 10px rgba(0, 0, 0, 1.0);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 200px;
+    width: 550px;
+    background: transparent;
+    border-radius: 3px;
+    box-shadow: 0px 8px 10px rgba(0, 0, 0, 1.0);
+}
+
+.relogio.light-theme {
+    box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.2);
 }
 
 .relogio div {
-   height: 170px;
-   width: 150px;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   justify-content: center;
-   color: #fff;
-   background: rgba(0, 0, 0, 0.7); /* Cor escura levemente transparente */
-   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.7);
-   border-radius: 7px;
-   letter-spacing: 3px;
+    height: 170px;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.7); /* Tema padrão (escuro) */
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.7);
+    border-radius: 7px;
+    letter-spacing: 3px;
+}
+
+.relogio.light-theme div {
+    color: #333;
+    background: rgba(255, 255, 255, 0.8); /* Tema claro */
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
 .relogio div:nth-child(2) {
-   background: rgba(0, 0, 0, 0.7); /* Cor escura levemente transparente */
+    background: rgba(0, 0, 0, 0.7); /* Tema padrão (escuro) */
+}
+
+.relogio.light-theme div:nth-child(2) {
+    background: rgba(255, 255, 255, 0.8); /* Tema claro */
 }
 
 .relogio span {
-   font-weight: bolder;
-   font-size: 60px;
+    font-weight: bolder;
+    font-size: 60px;
 }
 
 .relogio span.tempo {
-   font-size: 10px;
+    font-size: 10px;
+}
+
+#themeSwitcher {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#themeSwitcher:hover {
+    background-color: #555;
 }
 
 .cabecalho .logo {
-   width: 65px;
-}
-/* ... outros estilos ... */
-
-.relogio div {
-   /* ... outros estilos ... */
-   transform: scale(1);
-   transition: transform 0.2s ease-in-out, background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.relogio div:hover {
-   transform: scale(1.05);
-}
-
-.relogio span {
-   font-weight: bolder;
-   font-size: 60px;
-   opacity: 0.9;
-   transition: opacity 0.2s ease-in-out;
-}
-
-.relogio span:hover {
-   opacity: 1;
-}
-/* ... outros estilos ... */
-
-#segundos {
-   /* ... outros estilos ... */
-   transition: color 0.1s ease-in-out;
-}
-
-.tick {
-   color: #ff9500 !important; /* Cor de destaque para o "tick" */
+    width: 65px;
 }
