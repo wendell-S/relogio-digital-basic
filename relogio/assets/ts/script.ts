@@ -41,6 +41,37 @@ resetThemeButton.addEventListener('click', () => {
 // Adiciona o botão ao body
 document.body.appendChild(resetThemeButton);
 
+let formato24h = true; // Define o formato inicial como 24h
+
+const formatoButton = document.createElement('button');
+formatoButton.id = 'formatoButton';
+formatoButton.textContent = 'Alternar para 12h';
+formatoButton.style.position = 'absolute';
+formatoButton.style.top = '100px';
+formatoButton.style.right = '20px';
+formatoButton.style.padding = '10px 15px';
+formatoButton.style.border = 'none';
+formatoButton.style.borderRadius = '5px';
+formatoButton.style.backgroundColor = '#333';
+formatoButton.style.color = '#fff';
+formatoButton.style.cursor = 'pointer';
+formatoButton.style.fontSize = '16px';
+formatoButton.style.transition = 'background-color 0.3s ease';
+formatoButton.addEventListener('mouseover', () => {
+    formatoButton.style.backgroundColor = '#555';
+});
+formatoButton.addEventListener('mouseout', () => {
+    formatoButton.style.backgroundColor = '#333';
+});
+formatoButton.addEventListener('click', () => {
+    formato24h = !formato24h;
+    formatoButton.textContent = formato24h ? 'Alternar para 12h' : 'Alternar para 24h';
+    atualizarRelogio();
+});
+
+// Adiciona o botão ao body
+document.body.appendChild(formatoButton);
+
 function atualizarRelogio(): void {
     const dateToday: Date = new Date();
     let hr: number | string = dateToday.getHours();
@@ -60,6 +91,17 @@ function atualizarRelogio(): void {
     if (segundosElement) {
         segundosElement.textContent = s.toString();
     }
+}
+
+// Adiciona animação ao relógio
+if (relogioElement) {
+    relogioElement.style.transition = 'transform 0.5s ease';
+    setInterval(() => {
+        relogioElement.style.transform = 'scale(1.05)';
+        setTimeout(() => {
+            relogioElement.style.transform = 'scale(1)';
+        }, 250);
+    }, 1000);
 }
 
 function toggleTheme(): void {
@@ -104,7 +146,7 @@ function exibirMensagem(): void {
 
 // Inicialização
 if (horasElement && minutosElement && segundosElement && themeSwitcher && bodyElement && relogioElement && relogioDivs) {
-    setInterval(atualizarRelogio, 1000);
+    setInterval(atualizarRelogio, 1000); // Atualiza o relógio a cada segundo
     themeSwitcher.addEventListener('click', toggleTheme);
     carregarTema(); // Carregar o tema ao carregar a página
     exibirMensagem(); // Exibir mensagem de boas-vindas
